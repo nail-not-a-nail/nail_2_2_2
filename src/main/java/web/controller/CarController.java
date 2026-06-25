@@ -6,7 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.service.CarService;
+import web.service.CarServiceImpl;
 
 
 @Controller
@@ -14,12 +14,12 @@ import web.service.CarService;
 public class CarController {
 
     @Autowired
-    private CarService carService;
+    private CarServiceImpl carServiceImpl;
 
     @GetMapping(value="")
     public String index ( @RequestParam(required = false, defaultValue = "5") int count,
                           ModelMap modelMap) {
-        modelMap.addAttribute("cars", carService.index(count));
+        modelMap.addAttribute("cars", carServiceImpl.index(count));
         return "car/cars";
     }
 }

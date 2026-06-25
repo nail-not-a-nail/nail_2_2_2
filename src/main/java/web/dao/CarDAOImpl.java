@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CarDAO {
+public class CarDAOImpl implements CarDAO{
     private static int PEOPLE_COUNT;
     private List<Car> cars;
 
